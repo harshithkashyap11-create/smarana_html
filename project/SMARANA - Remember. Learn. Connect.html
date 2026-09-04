@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SMARANA - Remember. Learn. Connect.</title>
+  <meta name="description" content="AI-powered cognitive engagement, memory assistance, learning, companionship, and family connection platform for elderly users.">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SMARANA">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- React 18 & Babel Standalone -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-amber-50/40 min-h-screen text-gray-900 antialiased selection:bg-amber-200">
+
+  <!-- React Mounting Root -->
+  <div id="root"></div>
+
+  <!-- Register PWA Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+          console.log('SMARANA PWA Service Worker registered:', reg);
+        }).catch(err => {
+          console.log('Service Worker registration skipped:', err);
+        });
+      });
+    }
+  </script>
+
+  <!-- Component Scripts -->
+  <script type="text/babel" src="js/audio.js"></script>
+  <script type="text/babel" src="js/store.js"></script>
+  <script type="text/babel" src="js/components/CompanionAvatar.js"></script>
+  <script type="text/babel" src="js/components/AuthGateway.js"></script>
+  <script type="text/babel" src="js/components/Navbar.js"></script>
+  <script type="text/babel" src="js/components/BottomNav.js"></script>
+  <script type="text/babel" src="js/components/CompanionCreator.js"></script>
+  <script type="text/babel" src="js/components/ElderHome.js"></script>
+  <script type="text/babel" src="js/components/GamesHub.js"></script>
+  <script type="text/babel" src="js/components/MemoryCapsule.js"></script>
+  <script type="text/babel" src="js/components/FamilyTime.js"></script>
+  <script type="text/babel" src="js/components/LearnHub.js"></script>
+  <script type="text/babel" src="js/components/EmergencyModal.js"></script>
+  <script type="text/babel" src="js/components/AccessibilitySettings.js"></script>
+  <script type="text/babel" src="js/components/DoctorDashboard.js"></script>
+  <script type="text/babel" src="js/app.js"></script>
+
+</body>
+</html>
